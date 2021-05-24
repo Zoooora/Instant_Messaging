@@ -1,0 +1,12 @@
+.root{
+    -fx-background-color: cornflowerblue;
+}
+.label{
+    -fx-font-size: 20;
+}
+.text-field{
+    -fx-background-color: inherit;
+    -fx-border-style: hidden hidden solid hidden;
+    -fx-border-color: darkgrey;
+}
+

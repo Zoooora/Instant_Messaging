@@ -1,0 +1,26 @@
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<GridPane fx:controller="sample.Controller"
+          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10"
+          stylesheets="/sample/style/stylesheet.css">
+    <!--<Label text="a" GridPane.columnIndex="0" GridPane.rowIndex="0"></Label>-->
+    <TextField promptText="请输入账号" GridPane.columnIndex="0" GridPane.rowIndex="0"></TextField>
+    <!--<Label text="Password:" GridPane.columnIndex="0" GridPane.rowIndex="1"></Label>-->
+    <PasswordField promptText="请输入密码" GridPane.columnIndex="0" GridPane.rowIndex="1"></PasswordField>
+
+    <HBox
+        spacing="10" alignment="BOTTOM_CENTER"
+        GridPane.columnIndex="0" GridPane.rowIndex="4">
+        <Button text="登录" onAction="#signIn" ></Button>
+        <Label GridPane.columnIndex="0" GridPane.columnSpan="4" fx:id="signIn"></Label>
+    </HBox>
+
+</GridPane>

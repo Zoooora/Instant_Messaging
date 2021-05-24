@@ -1,0 +1,18 @@
+MySQL类：
+    MySQL类公有属性：JDBC_DRIVER, USER, PASSWORD, conn
+    1.MySQL(String SetSchema)：通过传参方式链接schema
+    2.close()断开连接
+    3.login(String name, String password)通过判断名字和密码组合判断是否能登录系统
+    4.add_user(int user_id, String name, String password, String gender, short age)
+           增加用户，用于注册
+    5.delete_user(int user_id)删除用户，用于注销本人账号
+    6.select(int id)通过 id 查找用户或者群组
+    7.select(String name)通过名字查找用户或者群组
+    8.update(int user_id, String user_name, String password, String gender, short age)
+           更新自身资料，可更新本人的名字，密码性别以及年龄
+
+User类：
+    User类公有属性：user_id, user_name, password, gender, age
+    user_id:随机五位数字
+    user_name:5~15位 包括大小写字母或数字或._  必须以大小写字母开头
+    password:8~20位 包括大小写字母和数字和@#$%^&*
