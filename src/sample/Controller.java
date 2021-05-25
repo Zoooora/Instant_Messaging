@@ -3,6 +3,7 @@ package sample;
 import com.sun.javafx.scene.control.IntegerField;
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
+import javafx.scene.layout.GridPane;
 import sample.SQL.MySQL;
 import sample.homePage.HomePage;
 
@@ -12,8 +13,10 @@ import java.util.regex.Pattern;
 
 public class Controller {
     public Label signIn;
+    public Label getOut;
     public TextField account;
     public PasswordField password;
+    public GridPane root;
 
     public void signIn(ActionEvent actionEvent) {
 
@@ -34,5 +37,9 @@ public class Controller {
         else{
             signIn.setText("no");
         }
+    }
+
+    public void getOut(ActionEvent actionEvent) {
+        root.getScene().getWindow().hide();
     }
 }
