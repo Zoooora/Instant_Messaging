@@ -12,15 +12,13 @@
 <GridPane fx:controller="sample.Controller"
           xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10"
           stylesheets="/sample/style/stylesheet.css">
-    <!--<Label text="a" GridPane.columnIndex="0" GridPane.rowIndex="0"></Label>-->
-    <TextField promptText="请输入账号" GridPane.columnIndex="0" GridPane.rowIndex="0" fx:id="account"></TextField>
-    <!--<Label text="Password:" GridPane.columnIndex="0" GridPane.rowIndex="1"></Label>-->
-    <PasswordField promptText="请输入密码" GridPane.columnIndex="0" GridPane.rowIndex="1" fx:id="password"></PasswordField>
+    <TextField promptText="请输入账号" GridPane.columnIndex="0" GridPane.rowIndex="6" fx:id="account"></TextField>
+    <PasswordField promptText="请输入密码" GridPane.columnIndex="0" GridPane.rowIndex="7" fx:id="password"></PasswordField>
 
     <HBox
         spacing="10" alignment="BOTTOM_CENTER"
-        GridPane.columnIndex="0" GridPane.rowIndex="4">
-        <Button text="登录" onAction="#signIn" ></Button>
+        GridPane.columnIndex="0" GridPane.rowIndex="8">
+        <Button text="登录" onAction="#signIn" minWidth="200" minHeight="30" translateX="6"></Button>
         <Label GridPane.columnIndex="0" GridPane.columnSpan="4" fx:id="signIn"></Label>
     </HBox>
 

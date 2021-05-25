@@ -26,7 +26,6 @@ public class Controller {
             password.clear();
             return;
         }
-
         int id = Integer.parseInt(account.getText());
         String paswd = password.getText();
         if(new HomePage().login(id, paswd)) {

@@ -1,5 +1,5 @@
 .root{
-    -fx-background-color: cornflowerblue;
+    -fx-font-size: 15;
 }
 .label{
     -fx-font-size: 20;
@@ -9,4 +9,5 @@
     -fx-border-style: hidden hidden solid hidden;
     -fx-border-color: darkgrey;
 }
+
 
