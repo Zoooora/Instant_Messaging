@@ -16,9 +16,9 @@ public class HomePage {
 
     }
 
-    public boolean login(String name, String password){
+    public boolean login(int account, String password){
         MySQL mySQL = new MySQL("information");
-        boolean re = mySQL.login(name, password);
+        boolean re = mySQL.login(account, password);
         mySQL.close();
         return re;
     }

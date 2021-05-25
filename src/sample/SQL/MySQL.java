@@ -28,11 +28,11 @@ public class MySQL {
         }
     }
 
-    public boolean login(String name, String password){
-        String sql = "select * from user where user_name = ? and password = ?";
+    public boolean login(int account, String password){
+        String sql = "select * from user where user_id = ? and password = ?";
         try {
             PreparedStatement preSta = this.conn.prepareStatement(sql);
-            preSta.setString(1, name);
+            preSta.setInt(1, account);
             preSta.setString(2, password);
             ResultSet rs = preSta.executeQuery();
             if(rs.next()) return true;

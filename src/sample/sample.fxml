@@ -8,13 +8,14 @@
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
+<?import com.sun.javafx.scene.control.IntegerField?>
 <GridPane fx:controller="sample.Controller"
           xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10"
           stylesheets="/sample/style/stylesheet.css">
     <!--<Label text="a" GridPane.columnIndex="0" GridPane.rowIndex="0"></Label>-->
-    <TextField promptText="请输入账号" GridPane.columnIndex="0" GridPane.rowIndex="0"></TextField>
+    <TextField promptText="请输入账号" GridPane.columnIndex="0" GridPane.rowIndex="0" fx:id="account"></TextField>
     <!--<Label text="Password:" GridPane.columnIndex="0" GridPane.rowIndex="1"></Label>-->
-    <PasswordField promptText="请输入密码" GridPane.columnIndex="0" GridPane.rowIndex="1"></PasswordField>
+    <PasswordField promptText="请输入密码" GridPane.columnIndex="0" GridPane.rowIndex="1" fx:id="password"></PasswordField>
 
     <HBox
         spacing="10" alignment="BOTTOM_CENTER"
