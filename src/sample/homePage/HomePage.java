@@ -31,7 +31,7 @@ public class HomePage {
         if(!matcher.matches()) return false;
         else{
             MySQL mySQL = new MySQL("information");
-            mySQL.add_user(GetRandomId("user"), name, password, gender, age);
+            mySQL.add_user(GetRandomId("user"), name, password, gender, age, false);
         }
         return false;
     }
