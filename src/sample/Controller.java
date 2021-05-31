@@ -1,18 +1,12 @@
 package sample;
 
-import com.sun.javafx.scene.control.IntegerField;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.Pane;
-import javafx.stage.Stage;
-import sample.SQL.MySQL;
-import sample.homePage.HomePage;
 
-import java.util.HashMap;
+import sample.homePage.HomePage;
+import sample.user.UserPage;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -42,6 +36,7 @@ public class Controller {
         String paswd = password.getText();
         if(new HomePage().login(id, paswd)) {
             UserPage userPage = new UserPage();
+            userPage.user_id = id;
             userPage.newPage();
             root.getScene().getWindow().hide();
         }
@@ -55,4 +50,7 @@ public class Controller {
     }
 
 
+    public void regis(ActionEvent actionEvent) {
+
+    }
 }

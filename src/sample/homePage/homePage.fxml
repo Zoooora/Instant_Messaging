@@ -15,19 +15,26 @@
           xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10"
           stylesheets="/sample/style/stylesheet.css" fx:id="root">
 
-    <TextField promptText="请输入账号" GridPane.columnIndex="0" GridPane.rowIndex="7" fx:id="account"></TextField>
-    <PasswordField promptText="请输入密码" GridPane.columnIndex="0" GridPane.rowIndex="8" fx:id="password"></PasswordField>
+    <TextField promptText="请输入账号" GridPane.columnIndex="0" GridPane.rowIndex="13" fx:id="account"></TextField>
+    <PasswordField promptText="请输入密码" GridPane.columnIndex="0" GridPane.rowIndex="14" fx:id="password"></PasswordField>
 
     <HBox
         spacing="10" alignment="BOTTOM_CENTER"
-        GridPane.columnIndex="0" GridPane.rowIndex="9">
+        GridPane.columnIndex="0" GridPane.rowIndex="15">
         <Button text="登录" onAction="#signIn" minWidth="200" minHeight="30" translateX="6"></Button>
         <Label GridPane.columnIndex="0" GridPane.columnSpan="4" fx:id="signIn"></Label>
     </HBox>
 
     <HBox
+            spacing="10" alignment="BASELINE_LEFT"
+            GridPane.columnIndex="0" GridPane.rowIndex="18">
+        <Button text="注册" onAction="#regis" translateX="-70"></Button>
+        <Label GridPane.columnIndex="0" GridPane.columnSpan="4" fx:id="regis"></Label>
+    </HBox>
+
+    <HBox
         spacing="30" alignment="BASELINE_RIGHT"
-        GridPane.columnIndex="0" GridPane.rowIndex="12">
+        GridPane.columnIndex="0" GridPane.rowIndex="18">
         <Button text="退出" onAction="#getOut" translateX="100"></Button>
         <Label GridPane.columnIndex="0" GridPane.columnSpan="4" fx:id="getOut"></Label>
     </HBox>

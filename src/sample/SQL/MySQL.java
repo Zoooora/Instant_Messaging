@@ -36,7 +36,7 @@ public class MySQL {
             preSta.setString(2, password);
             ResultSet rs = preSta.executeQuery();
             if(rs.next()){
-                updateStatus(true);
+                updateStatus("online", account);
                 return true;
             }
             else return false;
@@ -105,17 +105,16 @@ public class MySQL {
         return null;
     }
 
-    public void update(int user_id, String user_name, String password, String gender, short age){
-        String sql_1 = "update user set user_name = ?, password = ?, gender = ?, age = ? where user_id = ?";
+    public void update(int user_id, String user_name, String password, String gender, short age, String status){
+        String sql_1 = "update user set user_name = ?, password = ?, gender = ?, age = ?, online = ? where user_id = ?";
         try{
             PreparedStatement preSta_1 = this.conn.prepareStatement(sql_1);
-
             preSta_1.setString(1, user_name);
             preSta_1.setString(2, password);
             preSta_1.setString(3, gender);
             preSta_1.setShort(4, age);
-            preSta_1.setInt(5, user_id);
-
+            preSta_1.setString(5, status);
+            preSta_1.setInt(6, user_id);
             preSta_1.executeUpdate();
             preSta_1.close();
         }catch (Exception e){
@@ -123,11 +122,12 @@ public class MySQL {
         }
     }
 
-    public void updateStatus(boolean status){
-        String sql = "update user set online = ?";
+    public void updateStatus(String status, int user_id){
+        String sql = "update user set online = ? where user_id = ?";
         try {
             PreparedStatement preSta = this.conn.prepareStatement(sql);
-            preSta.setBoolean(1, status);
+            preSta.setString(1, status);
+            preSta.setInt(2, user_id);
             preSta.executeUpdate();
             preSta.close();
         } catch (SQLException sqlException) {

@@ -1,27 +1,29 @@
-package sample;
+package sample.user;
 
 import javafx.application.Application;
+import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import sample.SQL.MySQL;
 
-public class Main extends Application {
+public class UserPage extends Application {
+    public int user_id;
+    public double x1;
+    public double y1;
+    public AnchorPane userPage;
+    Stage stage = new Stage();
 
-
-    double x1;
-    double y1;
-    double x_stage;
-    double y_stage;
-
-    @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("homePage/homePage.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("userPage.fxml"));
         primaryStage.initStyle(StageStyle.TRANSPARENT);
-        primaryStage.setScene(new Scene(root, 430, 328));
+        primaryStage.setScene(new Scene(root, 350, 750));
         primaryStage.show();
 
         primaryStage.getScene().setOnMousePressed(new EventHandler<MouseEvent>() {
@@ -38,11 +40,16 @@ public class Main extends Application {
                 primaryStage.setY(mouseEvent.getScreenY() - y1);
             }
         });
-
     }
 
+    public void newPage() throws Exception {
+        start(stage);
+    }
 
-    public static void main(String[] args) {
-        launch(args);
+    public void logOut(ActionEvent actionEvent) {
+        MySQL mySQL = new MySQL("information");
+        mySQL.update(00001, "tom", "1", "male", (short) 24, "offline");
+        mySQL.close();
+        userPage.getScene().getWindow().hide();
     }
 }
