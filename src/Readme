@@ -1,3 +1,8 @@
+数据库：
+    表：relationship, union, user
+    relationship:是否互为好友，号数小的永远为host_id
+
+
 MySQL类：
     MySQL类公有属性：JDBC_DRIVER, USER, PASSWORD, conn
     1.MySQL(String SetSchema)：通过传参方式链接schema
@@ -16,3 +21,10 @@ User类：
     user_id:随机五位数字
     user_name:5~15位 包括大小写字母或数字或._  必须以大小写字母开头
     password:8~20位 包括大小写字母和数字和@#$%^&*
+    用户：
+    00001 tom 1 male 24
+    12488 duke 2 male 12
+    45978 jerry 3 male 20
+    78859 q 4 female 20
+    54897 carter 5 female 40
+    41686 jeff 6 male 30

@@ -1,22 +1,18 @@
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.layout.GridPane?>
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.text.Text?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.PasswordField?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
-<?import com.sun.javafx.scene.control.IntegerField?>
-<?import javafx.scene.layout.BorderPane?>
 
 <GridPane fx:controller="sample.Controller"
           xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10"
           stylesheets="/sample/style/stylesheet.css" fx:id="root">
 
-    <TextField promptText="请输入账号" GridPane.columnIndex="0" GridPane.rowIndex="13" fx:id="account"></TextField>
-    <PasswordField promptText="请输入密码" GridPane.columnIndex="0" GridPane.rowIndex="14" fx:id="password"></PasswordField>
+    <Label text="            CHATS" GridPane.columnIndex="0" GridPane.rowIndex="10"></Label>
+    <TextField promptText="请输入账号" GridPane.columnIndex="0" GridPane.rowIndex="12" fx:id="account"></TextField>
+    <PasswordField promptText="请输入密码" GridPane.columnIndex="0" GridPane.rowIndex="13" fx:id="password"></PasswordField>
 
     <HBox
         spacing="10" alignment="BOTTOM_CENTER"
@@ -27,14 +23,14 @@
 
     <HBox
             spacing="10" alignment="BASELINE_LEFT"
-            GridPane.columnIndex="0" GridPane.rowIndex="18">
+            GridPane.columnIndex="0" GridPane.rowIndex="16">
         <Button text="注册" onAction="#regis" translateX="-70"></Button>
         <Label GridPane.columnIndex="0" GridPane.columnSpan="4" fx:id="regis"></Label>
     </HBox>
 
     <HBox
         spacing="30" alignment="BASELINE_RIGHT"
-        GridPane.columnIndex="0" GridPane.rowIndex="18">
+        GridPane.columnIndex="0" GridPane.rowIndex="16">
         <Button text="退出" onAction="#getOut" translateX="100"></Button>
         <Label GridPane.columnIndex="0" GridPane.columnSpan="4" fx:id="getOut"></Label>
     </HBox>

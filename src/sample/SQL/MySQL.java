@@ -1,6 +1,7 @@
 package sample.SQL;
 
 import java.sql.*;
+import java.util.ArrayList;
 
 public class MySQL {
     static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
@@ -133,5 +134,71 @@ public class MySQL {
         } catch (SQLException sqlException) {
             sqlException.printStackTrace();
         }
+    }
+
+    public int addFriend(int host, int friend){
+        String search1 = "select friend_id from relationship where host_id = ?";
+        String sql = "insert into relationship(host_id, friend_id)" +
+                "values(? ,?)";
+        try {
+            PreparedStatement preSta = this.conn.prepareStatement(search1);
+            preSta.setInt(1, host);
+            ResultSet rs = preSta.executeQuery();
+            if(rs.next()){
+                return -1;//已经是好友
+            }
+            else{
+                PreparedStatement pre = this.conn.prepareStatement(sql);
+                pre.setInt(1, host);
+                pre.setInt(2, friend);
+                pre.executeUpdate();
+                return 1;//完成了加好友操作
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return -1;
+    }
+
+    public int deleteFriend(int host, int friend){
+        String search1 = "select friend_id from relationship where host_id = ?";
+        String sql = "delete from relationship where host_id = ?";
+        try {
+            PreparedStatement preSta = this.conn.prepareStatement(search1);
+            preSta.setInt(1, host);
+            ResultSet rs = preSta.executeQuery();
+            if(rs.next()){
+                PreparedStatement pre = this.conn.prepareStatement(sql);
+                pre.setInt(1, host);
+                pre.executeUpdate();
+                return 1;//完成了删好友操作
+            }
+            else{
+                return -1;//还不是好友
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return -1;
+    }
+
+    public ArrayList<Integer> findFriends(int id){
+        ArrayList<Integer> temp = new ArrayList<>();
+        String search1 = "select friend_id from relationship where host_id = ?";
+        String search2 = "select host_id from relationship where friend_id = ?";
+        try {
+            PreparedStatement preSta1 = this.conn.prepareStatement(search1);
+            PreparedStatement preSta2 = this.conn.prepareStatement(search2);
+            preSta1.setInt(1, id);
+            preSta2.setInt(1, id);
+            ResultSet rs1 = preSta1.executeQuery();
+            ResultSet rs2 = preSta2.executeQuery();
+            while(rs1.next()) temp.add(rs1.getInt("friend_id"));
+            while(rs2.next()) temp.add(rs2.getInt("host_id"));
+            return temp;
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return null;
     }
 }

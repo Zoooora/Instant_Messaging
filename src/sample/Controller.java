@@ -35,10 +35,10 @@ public class Controller {
         int id = Integer.parseInt(account.getText());
         String paswd = password.getText();
         if(new HomePage().login(id, paswd)) {
+            root.getScene().getWindow().hide();
             UserPage userPage = new UserPage();
             userPage.user_id = id;
             userPage.newPage();
-            root.getScene().getWindow().hide();
         }
         else{
             new Alert(Alert.AlertType.NONE, "账号或密码错误", new ButtonType[]{ButtonType.OK}).show();
